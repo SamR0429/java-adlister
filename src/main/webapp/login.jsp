@@ -27,10 +27,12 @@
 <html>
 <head>
     <title>Log in</title>
+    <%@include file="partials/head.jsp"%>
 </head>
 <body>
 
 <%@ include file="partials/navbar.jsp"%>
+
 
 <H3>Login Here</H3>
 
