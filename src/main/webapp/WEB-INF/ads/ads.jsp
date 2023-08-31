@@ -19,6 +19,5 @@
     <p>${ad.description}</p>
 </c:forEach>
 
-
 </body>
 </html>
