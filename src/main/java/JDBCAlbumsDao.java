@@ -45,15 +45,15 @@ public class JDBCAlbumsDao {
     }
 
 
-    public void deleteAlbum() {
-        try {
-            Statement statement = connection.createStatement();
-            String deleteQuery = String.format("DELETE FROM albums WHERE id = 4");
-            Statement.executeUpdate(deleteQuery);
-        }catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
+//    public void deleteAlbum() {
+//        try {
+//            Statement statement = connection.createStatement();
+//            String deleteQuery = String.format("DELETE FROM albums WHERE id = 4");
+//            Statement.executeUpdate(deleteQuery);
+//        }catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
 
     public static void main(String[] args) {
