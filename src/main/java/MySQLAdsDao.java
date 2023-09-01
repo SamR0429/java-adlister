@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySQLAdsDao implements Ads{
+public class MySQLAdsDao implements Ads {
 
     private Connection connection;
 
@@ -42,5 +42,16 @@ public class MySQLAdsDao implements Ads{
         }
         return ads;
     }
+
+    @Override
+    public Long insert(Ad ad) {
+
+
+
+
+    }
+
+//    return ads;
+
 
 }
