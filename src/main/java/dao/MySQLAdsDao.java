@@ -1,9 +1,11 @@
+package dao;
+
 import com.mysql.cj.jdbc.Driver;
+import models.Ad;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import dao.Config;
 
 public class MySQLAdsDao implements Ads {
 

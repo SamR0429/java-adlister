@@ -1,3 +1,6 @@
+package dao;
+
+import dao.Ads;
 import dao.Config;
 
 public class DaoFactory {
