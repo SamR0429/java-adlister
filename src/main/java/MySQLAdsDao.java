@@ -1,9 +1,9 @@
 import com.mysql.cj.jdbc.Driver;
 
-import javax.servlet.jsp.jstl.core.Config;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import dao.Config;
 
 public class MySQLAdsDao implements Ads {
 
@@ -46,7 +46,18 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public Long insert(Ad ad) {
-        return null;
+        Long lastInsertedID = 0L;
+        try {
+            Statement statement = connection.createStatement();
+            String insertQuery = String.format("INSERT INTO ads(user_id, title, description) VALUES('%d', '%s', '%s')", ad.getUserId(), ad.getTitle(), ad.getDescription());
+            statement.executeUpdate(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            ResultSet rs = statement.getGeneratedKeys();
+            rs.next();
+            lastInsertedID = rs.getLong(1);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return lastInsertedID;
     }
 
 
@@ -58,6 +69,10 @@ public class MySQLAdsDao implements Ads {
 //this should work as a test run when you've done everything right
         MySQLAdsDao mySQLAdsDao = new MySQLAdsDao(new Config());
         System.out.println(mySQLAdsDao.all());
+
+
+
+
     }
 
 }
